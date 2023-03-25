@@ -96,6 +96,7 @@ header{
   background-color: black;
   width: 24px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .switch-left, .switch-right{
@@ -104,6 +105,7 @@ header{
   border: 1px solid;
   background-color: white;
   border-radius: 8px;
+  
 }
 
 .switch-right{

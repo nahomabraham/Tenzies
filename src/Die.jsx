@@ -16,7 +16,7 @@ export default function Die(props){
     }
     return (
         <div className="dice" style={styles} onClick={props.holdDice}>
-            {dotElements()}
+            {props.isNums ? props.value : dotElements()}
         </div>
     )
 }
