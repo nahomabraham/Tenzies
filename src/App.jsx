@@ -1,5 +1,6 @@
 import React from "react"
 import Die from "./Die"
+import Switch from "./Switch"
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 
@@ -61,11 +62,15 @@ export default function App(){
             holdDice={() => holdDice(die.id)}
         />
     )
+    
 
     return (
         <main>
             {tenzies && <Confetti/>}
-            <h1 className="title">Tenzies</h1>
+            <header>
+                <h1 className="title">Tenzies</h1>
+                <Switch />
+            </header>
             <div className="instruction">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</div>
             <div className="dice-container">
                 {dieElements}
