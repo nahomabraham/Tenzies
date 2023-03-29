@@ -1,10 +1,7 @@
 import React from "react";
 
 export default function Timer(props){
-    const [time, setTime] = React.useState({
-        min: 0,
-        sec: 0
-    })
+    const [time, setTime] = React.useState(0)
     const [id, setId] = React.useState(0)
 
     React.useEffect(
@@ -14,10 +11,7 @@ export default function Timer(props){
             }
             else{
                 setId(setInterval(setCurrentTime, 1000))
-                setTime({
-                    min: 0,
-                    sec: 0
-                })
+                setTime(0)
             }
             
 
@@ -28,17 +22,17 @@ export default function Timer(props){
 
 
     function setCurrentTime(){
-        setTime(time => time.sec < 59 ? 
-            {...time, sec: time.sec+1} : 
-            {min: time.min+1, sec: 0}
-        )
+        setTime(time => time+1)
     }
 
+    function formatTime(){
+        return `${Math.floor(time/60)}:${time%60}`
+    }
     
     return (
         <div className="timer">
             <div className="timer-text">Time </div>
-            <div className="timer-time">{time.min}:{time.sec}</div>
+            <div className="timer-time">{formatTime()}</div>
         </div>
     )
 }
