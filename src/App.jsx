@@ -1,6 +1,7 @@
 import React from "react"
 import Die from "./Die"
 import Switch from "./Switch"
+import Timer from "./Timer"
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 
@@ -80,6 +81,7 @@ export default function App(){
                 {dieElements}
             </div>
             <button className="roll-button" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
+            <Timer tenzies={tenzies}/>
         </main>
     )
 }
