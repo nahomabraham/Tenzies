@@ -112,6 +112,11 @@ header{
   margin-left: auto;
 }
 
+.timer-container{
+  display: flex;
+  gap: 25px;
+}
+
 .timer {
   text-align: center;
 }
